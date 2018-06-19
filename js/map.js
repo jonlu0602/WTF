@@ -148,8 +148,12 @@ function createRestaurantBlock(details) {
   rest.className = 'rest';
 
   let restName = document.createElement('span');
+  let searchName = 'http://www.google.com/search?q=' + details.name
   restName.className = 'rest-name';
   restName.innerHTML = details.name;
+  restName.addEventListener('click', function () {
+    window.open(searchName);
+  });
   rest.appendChild(restName);
 
   let row = document.createElement('div');
